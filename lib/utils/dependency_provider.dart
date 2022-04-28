@@ -6,10 +6,9 @@ import 'package:rsa_key_generator/utils/rsa_key_helper.dart';
 /// By accessing [of] and providing a [BuildContext] we can access, for example, the [Config] instance.
 /// Usage: `var provider = DependencyProvider.of(context);`
 class DependencyProvider extends InheritedWidget {
-
   static DependencyProvider of(BuildContext context) {
-    return (context.inheritFromWidgetOfExactType(DependencyProvider)
-    as DependencyProvider);
+    return (context.dependOnInheritedWidgetOfExactType<DependencyProvider>()
+        as DependencyProvider);
   }
 
   DependencyProvider({
